@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="navUpcoming">Upcoming Events - Kandenuwara Tamil Maha Vidyalayam</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Include -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="section-title" data-lang-key="navUpcoming">Upcoming Events</h1>
+                        <p class="section-subtitle">Stay informed about upcoming school events, programs, and important dates</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Event Categories -->
+        <section class="section bg-white pt-4">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <button class="btn btn-outline-primary active" data-filter="all">All Events</button>
+                            <button class="btn btn-outline-primary" data-filter="academic">Academic</button>
+                            <button class="btn btn-outline-primary" data-filter="cultural">Cultural</button>
+                            <button class="btn btn-outline-primary" data-filter="sports">Sports</button>
+                            <button class="btn btn-outline-primary" data-filter="examination">Examinations</button>
+                            <button class="btn btn-outline-primary" data-filter="celebration">Celebrations</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Upcoming Event -->
+        <section class="section bg-white pt-0">
+            <div class="container">
+                <h2 class="section-title">Next Major Event</h2>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-10">
+                        <div class="custom-card overflow-hidden">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                         class="img-fluid h-100 w-100" alt="Annual Sports Meet" style="object-fit: cover;">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <span class="badge bg-primary fs-6">Sports</span>
+                                            <span class="badge bg-warning text-dark fs-6">18 Days Left</span>
+                                        </div>
+                                        <h3 class="card-title text-primary mb-3">Annual Sports Meet 2025</h3>
+                                        <p class="card-text lead mb-4">
+                                            Join us for our biggest sporting event of the year featuring track and field competitions, 
+                                            team sports, and cultural performances.
+                                        </p>
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-calendar text-primary me-2"></i>
+                                                    <span><strong>March 25, 2025</strong></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-clock text-primary me-2"></i>
+                                                    <span>8:00 AM - 5:00 PM</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                                    <span>School Grounds</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-users text-primary me-2"></i>
+                                                    <span>All Grades</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar View -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h3 class="mb-4">Event Calendar - March 2025</h3>
+                        <div class="custom-card p-4">
+                            <div class="calendar-header mb-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-outline-primary btn-sm" id="prevMonth">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <h4 class="mb-0" id="currentMonth">March 2025</h4>
+                                    <button class="btn btn-outline-primary btn-sm" id="nextMonth">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="row text-center border-bottom pb-2 mb-2">
+                                    <div class="col fw-bold">Sun</div>
+                                    <div class="col fw-bold">Mon</div>
+                                    <div class="col fw-bold">Tue</div>
+                                    <div class="col fw-bold">Wed</div>
+                                    <div class="col fw-bold">Thu</div>
+                                    <div class="col fw-bold">Fri</div>
+                                    <div class="col fw-bold">Sat</div>
+                                </div>
+                                <!-- Calendar days will be populated by JavaScript -->
+                                <div id="calendarDays"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Event List -->
+                    <div class="col-lg-4">
+                        <h3 class="mb-4">This Month's Events</h3>
+                        <div class="event-quick-list">
+                            <div class="custom-card mb-3 p-3">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge bg-success">Academic</span>
+                                    <small class="text-muted">Mar 15</small>
+                                </div>
+                                <h6 class="mb-1">Parent-Teacher Conference</h6>
+                                <small class="text-muted">2:00 PM - 5:00 PM</small>
+                            </div>
+                            
+                            <div class="custom-card mb-3 p-3">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge bg-info">Cultural</span>
+                                    <small class="text-muted">Mar 20</small>
+                                </div>
+                                <h6 class="mb-1">Tamil New Year Celebration</h6>
+                                <small class="text-muted">9:00 AM - 12:00 PM</small>
+                            </div>
+                            
+                            <div class="custom-card mb-3 p-3">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge bg-primary">Sports</span>
+                                    <small class="text-muted">Mar 25</small>
+                                </div>
+                                <h6 class="mb-1">Annual Sports Meet</h6>
+                                <small class="text-muted">8:00 AM - 5:00 PM</small>
+                            </div>
+                            
+                            <div class="custom-card mb-3 p-3">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="badge bg-warning text-dark">Examination</span>
+                                    <small class="text-muted">Mar 28</small>
+                                </div>
+                                <h6 class="mb-1">Mid-Term Examination Begins</h6>
+                                <small class="text-muted">Full Day</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events List -->
+        <section class="section bg-white">
+            <div class="container">
+                <h2 class="section-title">All Upcoming Events</h2>
+                <div class="row g-4" id="eventsGrid">
+                    
+                    <!-- Academic Events -->
+                    <div class="col-lg-6 event-item" data-category="academic">
+                        <div class="custom-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-success">Academic</span>
+                                    <span class="text-muted">
+                                        <i class="fas fa-calendar me-1"></i>March 15, 2025
+                                    </span>
+                                </div>
+                                <h5 class="card-title">Parent-Teacher Conference</h5>
+                                <p class="card-text">Meet with teachers to discuss your child's academic progress and development. Individual meetings scheduled every 15 minutes.</p>
+                                <div class="event-details">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-clock text-primary me-2"></i>
+                                        <span>2:00 PM - 5:00 PM</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                        <span>Individual Classrooms</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-users text-primary me-2"></i>
+                                        <span>Parents & Guardians</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cultural Events -->
+                    <div class="col-lg-6 event-item" data-category="cultural">
+                        <div class="custom-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-info">Cultural</span>
+                                    <span class="text-muted">
+                                        <i class="fas fa-calendar me-1"></i>March 20, 2025
+                                    </span>
+                                </div>
+                                <h5 class="card-title">Tamil New Year Celebration</h5>
+                                <p class="card-text">Traditional Tamil New Year festivities with cultural performances, games, and special Tamil cuisine prepared by our community.</p>
+                                <div class="event-details">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-clock text-primary me-2"></i>
+                                        <span>9:00 AM - 12:00 PM</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                        <span>School Auditorium</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-users text-primary me-2"></i>
+                                        <span>Whole School Community</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Examination Events -->
+                    <div class="col-lg-6 event-item" data-category="examination">
+                        <div class="custom-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-warning text-dark">Examination</span>
+                                    <span class="text-muted">
+                                        <i class="fas fa-calendar me-1"></i>March 28 - April 5, 2025
+                                    </span>
+                                </div>
+                                <h5 class="card-title">Mid-Term Examinations</h5>
+                                <p class="card-text">Comprehensive mid-term examinations for all grades. Students should prepare well and arrive 30 minutes before each exam.</p>
+                                <div class="event-details">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-clock text-primary me-2"></i>
+                                        <span>8:00 AM - 3:00 PM (Daily)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                        <span>Examination Halls</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-users text-primary me-2"></i>
+                                        <span>Grades 6-13</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sports Events -->
+                    <div class="col-lg-6 event-item" data-category="sports">
+                        <div class="custom-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-primary">Sports</span>
+                                    <span class="text-muted">
+                                        <i class="fas fa-calendar me-1"></i>April 12, 2025
+                                    </span>
+                                </div>
+                                <h5 class="card-title">Inter-House Cricket Tournament</h5>
+                                <p class="card-text">Annual cricket tournament between school houses. Come support your house team in this exciting competition!</p>
+                                <div class="event-details">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-clock text-primary me-2"></i>
+                                        <span>9:00 AM - 4:00 PM</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                        <span>School Cricket Ground</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-users text-primary me-2"></i>
+                                        <span>House Teams</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Celebration Events -->
+                    <div class="col-lg-6 event-item" data-category="celebration">
+                        <div class="custom-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-success">Celebration</span>
+                                    <span class="text-muted">
+                                        <i class="fas fa-calendar me-1"></i>April 15, 2025
+                                    </span>
+                                </div>
+                                <h5 class="card-title">Annual Prize Giving Ceremony</h5>
+                                <p class="card-text">Recognizing and celebrating the outstanding achievements of our students in academics, sports, and extracurricular activities.</p>
+                                <div class="event-details">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-clock text-primary me-2"></i>
+                                        <span>6:00 PM - 9:00 PM</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                        <span>School Auditorium</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-users text-primary me-2"></i>
+                                        <span>Students, Parents, Staff</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Workshop -->
+                    <div class="col-lg-6 event-item" data-category="academic">
+                        <div class="custom-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-success">Academic</span>
+                                    <span class="text-muted">
+                                        <i class="fas fa-calendar me-1"></i>May 2, 2025
+                                    </span>
+                                </div>
+                                <h5 class="card-title">Science Fair & Innovation Exhibition</h5>
+                                <p class="card-text">Students showcase their scientific projects and innovative ideas. Guest scientists and educators will judge the presentations.</p>
+                                <div class="event-details">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-clock text-primary me-2"></i>
+                                        <span>10:00 AM - 4:00 PM</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                        <span>Science Laboratories</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-users text-primary me-2"></i>
+                                        <span>Grades 8-13</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Registration Section -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="section-title text-start">Event Notifications</h2>
+                        <p class="lead mb-4">
+                            Never miss an important school event! Subscribe to our event notifications 
+                            to receive timely reminders and updates.
+                        </p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                Email reminders 24 hours before events
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                SMS notifications for urgent updates
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                Calendar integration for your devices
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                Customizable notification preferences
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="custom-card p-4">
+                            <h4 class="mb-4 text-primary">Subscribe to Event Notifications</h4>
+                            <form id="notificationForm">
+                                <div class="mb-3">
+                                    <label for="parentName" class="form-label">Parent/Guardian Name</label>
+                                    <input type="text" class="form-control" id="parentName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="notifyEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="notifyEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="notifyPhone" class="form-label">Phone Number (Optional)</label>
+                                    <input type="tel" class="form-control" id="notifyPhone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="studentGrade" class="form-label">Student's Grade</label>
+                                    <select class="form-select" id="studentGrade" required>
+                                        <option value="">Select Grade</option>
+                                        <option value="6">Grade 6</option>
+                                        <option value="7">Grade 7</option>
+                                        <option value="8">Grade 8</option>
+                                        <option value="9">Grade 9</option>
+                                        <option value="10">Grade 10</option>
+                                        <option value="11">Grade 11</option>
+                                        <option value="12">Grade 12</option>
+                                        <option value="13">Grade 13</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Event Categories</label>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="academic" checked>
+                                                <label class="form-check-label" for="academic">Academic</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="cultural" checked>
+                                                <label class="form-check-label" for="cultural">Cultural</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="sports" checked>
+                                                <label class="form-check-label" for="sports">Sports</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="examination" checked>
+                                                <label class="form-check-label" for="examination">Examinations</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="celebration">
+                                                <label class="form-check-label" for="celebration">Celebrations</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="urgent" checked>
+                                                <label class="form-check-label" for="urgent">Urgent Updates</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Subscribe to Notifications</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Calendar -->
+        <section class="section bg-white">
+            <div class="container text-center">
+                <h2 class="section-title">Download Academic Calendar</h2>
+                <p class="section-subtitle">Get the complete academic calendar for planning and reference</p>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <a href="#" class="btn btn-outline-primary btn-lg w-100">
+                                    <i class="fas fa-file-pdf fa-2x mb-2 d-block"></i>
+                                    PDF Calendar
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="btn btn-outline-success btn-lg w-100">
+                                    <i class="fas fa-calendar-plus fa-2x mb-2 d-block"></i>
+                                    Google Calendar
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="btn btn-outline-info btn-lg w-100">
+                                    <i class="fas fa-calendar-alt fa-2x mb-2 d-block"></i>
+                                    iCal Format
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <p class="text-muted">
+                                The academic calendar includes all important dates, holidays, examination periods, 
+                                and special events throughout the academic year.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Upcoming Events Page Specific JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const eventItems = document.querySelectorAll('.event-item');
+            const notificationForm = document.getElementById('notificationForm');
+
+            // Event filtering functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter event items
+                    eventItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Notification form handling
+            if (notificationForm) {
+                notificationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(this);
+                    const selectedCategories = [];
+                    
+                    // Get selected categories
+                    ['academic', 'cultural', 'sports', 'examination', 'celebration', 'urgent'].forEach(category => {
+                        if (document.getElementById(category).checked) {
+                            selectedCategories.push(category);
+                        }
+                    });
+                    
+                    const data = {
+                        parentName: document.getElementById('parentName').value,
+                        email: document.getElementById('notifyEmail').value,
+                        phone: document.getElementById('notifyPhone').value,
+                        studentGrade: document.getElementById('studentGrade').value,
+                        categories: selectedCategories
+                    };
+
+                    // Basic validation
+                    if (!data.parentName || !data.email || !data.studentGrade) {
+                        showAlert('Please fill in all required fields.', 'warning');
+                        return;
+                    }
+
+                    if (selectedCategories.length === 0) {
+                        showAlert('Please select at least one event category.', 'warning');
+                        return;
+                    }
+
+                    // Simulate form submission
+                    showAlert('Successfully subscribed to event notifications! You will receive updates for selected categories.', 'success');
+                    this.reset();
+                    
+                    console.log('Notification subscription:', data);
+                });
+            }
+
+            // Simple calendar generation
+            generateCalendar();
+        });
+
+        // Generate a simple calendar view
+        function generateCalendar() {
+            const calendarDays = document.getElementById('calendarDays');
+            if (!calendarDays) return;
+
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = 2; // March (0-indexed)
+            
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            let calendarHTML = '';
+            let dayCount = 1;
+
+            // Generate calendar weeks
+            for (let week = 0; week < 6; week++) {
+                calendarHTML += '<div class="row text-center">';
+                
+                for (let day = 0; day < 7; day++) {
+                    if (week === 0 && day < firstDay) {
+                        calendarHTML += '<div class="col p-2"></div>';
+                    } else if (dayCount > daysInMonth) {
+                        calendarHTML += '<div class="col p-2"></div>';
+                    } else {
+                        const hasEvent = [15, 20, 25, 28].includes(dayCount);
+                        const eventClass = hasEvent ? 'bg-primary text-white rounded-circle' : '';
+                        const eventIndicator = hasEvent ? '<small class="d-block">•</small>' : '';
+                        
+                        calendarHTML += `
+                            <div class="col p-2">
+                                <div class="calendar-day ${eventClass}" style="height: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer;">
+                                    <span>${dayCount}</span>
+                                    ${eventIndicator}
+                                </div>
+                            </div>
+                        `;
+                        dayCount++;
+                    }
+                }
+                
+                calendarHTML += '</div>';
+                
+                if (dayCount > daysInMonth) break;
+            }
+            
+            calendarDays.innerHTML = calendarHTML;
+
+            // Add click handlers for calendar days
+            document.querySelectorAll('.calendar-day').forEach(day => {
+                day.addEventListener('click', function() {
+                    if (this.classList.contains('bg-primary')) {
+                        showAlert('Event details would be displayed here.', 'info');
+                    }
+                });
+            });
+        }
+
+        // Load header and footer
+        async function loadIncludes() {
+            try {
+                // Load header
+                const headerResponse = await fetch('includes/header.html');
+                const headerHTML = await headerResponse.text();
+                document.getElementById('header-container').innerHTML = headerHTML;
+                
+                // Load footer
+                const footerResponse = await fetch('includes/footer.html');
+                const footerHTML = await footerResponse.text();
+                document.getElementById('footer-container').innerHTML = footerHTML;
+                
+                // Reinitialize language system after loading includes
+                setTimeout(() => {
+                    if (typeof initializeLanguageSystem === 'function') {
+                        initializeLanguageSystem();
+                    }
+                }, 100);
+                
+            } catch (error) {
+                console.error('Error loading includes:', error);
+            }
+        }
+        
+        // Load includes when DOM is loaded
+        document.addEventListener('DOMContentLoaded', loadIncludes);
+    </script>
+</body>
+</html>

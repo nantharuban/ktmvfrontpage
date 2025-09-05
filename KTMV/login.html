@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="navLogin">Student Portal - Kandenuwara Tamil Maha Vidyalayam</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .login-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNIDAgMCBMIDYwIDYwIE0gNjAgMCBMIDAgNjAiLz48L2c+PC9zdmc+');
+            opacity: 0.3;
+        }
+        
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+            margin: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .login-left {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .login-left::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover;
+            opacity: 0.2;
+        }
+        
+        .login-left-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .login-right {
+            padding: 60px 40px;
+        }
+        
+        .portal-tabs {
+            display: flex;
+            border-radius: 10px;
+            background: #f8fafc;
+            padding: 5px;
+            margin-bottom: 30px;
+        }
+        
+        .portal-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            border: none;
+            background: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .portal-tab.active {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .login-form {
+            display: none;
+        }
+        
+        .login-form.active {
+            display: block;
+        }
+        
+        .form-floating {
+            margin-bottom: 20px;
+        }
+        
+        .form-floating input {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 1rem 1rem;
+            height: calc(3.5rem + 2px);
+        }
+        
+        .form-floating input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+        }
+        
+        .login-btn {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .login-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #ddd;
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 15px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .quick-links {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        
+        .quick-link {
+            display: block;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+            transition: var(--transition);
+        }
+        
+        .quick-link:hover {
+            color: var(--secondary-color);
+            padding-left: 10px;
+        }
+        
+        .system-status {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #2e7d32;
+        }
+        
+        .forgot-password {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .forgot-password a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .login-card {
+                margin: 10px;
+            }
+            
+            .login-left {
+                padding: 40px 20px;
+            }
+            
+            .login-right {
+                padding: 40px 20px;
+            }
+            
+            .portal-tabs {
+                flex-direction: column;
+            }
+            
+            .portal-tab {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="row g-0">
+                <!-- Left Side - School Info -->
+                <div class="col-lg-5 login-left">
+                    <div class="login-left-content">
+                        <div class="mb-4">
+                            <img src="https://via.placeholder.com/80/ffffff/6a0dad?text=KTMV" alt="School Logo" class="mb-3" style="width: 80px; height: 80px; border-radius: 50%;">
+                        </div>
+                        <h2 class="mb-3" data-lang-key="schoolName">Kandenuwara Tamil Maha Vidyalayam</h2>
+                        <p class="lead mb-4" data-lang-key="heroMotto">அறிவு வழி ஒழுக்கு</p>
+                        <p class="mb-4">Welcome to our student portal. Access your academic information, assignments, grades, and school resources in one convenient location.</p>
+                        
+                        <div class="row text-center mt-5">
+                            <div class="col-4">
+                                <i class="fas fa-book-open fa-2x mb-2 d-block"></i>
+                                <small>Academic Records</small>
+                            </div>
+                            <div class="col-4">
+                                <i class="fas fa-calendar-alt fa-2x mb-2 d-block"></i>
+                                <small>Class Schedule</small>
+                            </div>
+                            <div class="col-4">
+                                <i class="fas fa-comments fa-2x mb-2 d-block"></i>
+                                <small>Communication</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Login Forms -->
+                <div class="col-lg-7 login-right">
+                    <div class="mb-4">
+                        <h3 class="text-primary mb-2">Student Portal Access</h3>
+                        <p class="text-muted">Choose your portal and sign in to access your account</p>
+                    </div>
+                    
+                    <!-- Portal Selection Tabs -->
+                    <div class="portal-tabs">
+                        <button class="portal-tab active" data-target="student">
+                            <i class="fas fa-user-graduate me-2"></i>Student Portal
+                        </button>
+                        <button class="portal-tab" data-target="parent">
+                            <i class="fas fa-users me-2"></i>Parent Portal
+                        </button>
+                        <button class="portal-tab" data-target="teacher">
+                            <i class="fas fa-chalkboard-teacher me-2"></i>Teacher Portal
+                        </button>
+                    </div>
+                    
+                    <!-- Student Portal Form -->
+                    <form class="login-form active" id="studentForm" data-form="student">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="studentId" placeholder="Student ID" required>
+                            <label for="studentId">Student ID</label>
+                        </div>
+                        
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="studentPassword" placeholder="Password" required>
+                            <label for="studentPassword">Password</label>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberStudent">
+                                <label class="form-check-label" for="rememberStudent">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Forgot Password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary login-btn">
+                            <i class="fas fa-sign-in-alt me-2"></i>Sign In to Student Portal
+                        </button>
+                        
+                        <div class="system-status">
+                            <i class="fas fa-check-circle me-2"></i>
+                            All systems operational. Last updated: Today 2:30 PM
+                        </div>
+                    </form>
+                    
+                    <!-- Parent Portal Form -->
+                    <form class="login-form" id="parentForm" data-form="parent">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="parentEmail" placeholder="Email Address" required>
+                            <label for="parentEmail">Email Address</label>
+                        </div>
+                        
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="parentPassword" placeholder="Password" required>
+                            <label for="parentPassword">Password</label>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberParent">
+                                <label class="form-check-label" for="rememberParent">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Forgot Password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary login-btn">
+                            <i class="fas fa-sign-in-alt me-2"></i>Sign In to Parent Portal
+                        </button>
+                        
+                        <div class="text-center mt-3">
+                            <p class="mb-0 text-muted">New parent? <a href="contact.html" class="text-primary">Contact us for account setup</a></p>
+                        </div>
+                    </form>
+                    
+                    <!-- Teacher Portal Form -->
+                    <form class="login-form" id="teacherForm" data-form="teacher">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="teacherId" placeholder="Teacher ID" required>
+                            <label for="teacherId">Teacher ID</label>
+                        </div>
+                        
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="teacherPassword" placeholder="Password" required>
+                            <label for="teacherPassword">Password</label>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberTeacher">
+                                <label class="form-check-label" for="rememberTeacher">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Forgot Password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary login-btn">
+                            <i class="fas fa-sign-in-alt me-2"></i>Sign In to Teacher Portal
+                        </button>
+                        
+                        <div class="text-center mt-3">
+                            <p class="mb-0 text-muted">Need technical support? <a href="contact.html" class="text-primary">Contact IT department</a></p>
+                        </div>
+                    </form>
+                    
+                    <!-- Quick Links -->
+                    <div class="quick-links">
+                        <h6 class="text-muted mb-3">Quick Links</h6>
+                        <a href="index.html" class="quick-link">
+                            <i class="fas fa-home me-2"></i>School Website
+                        </a>
+                        <a href="academics.html" class="quick-link">
+                            <i class="fas fa-book me-2"></i>Academic Calendar
+                        </a>
+                        <a href="news.html" class="quick-link">
+                            <i class="fas fa-newspaper me-2"></i>Latest News
+                        </a>
+                        <a href="contact.html" class="quick-link">
+                            <i class="fas fa-phone me-2"></i>Contact Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Reset Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="forgotPasswordForm">
+                        <div class="mb-3">
+                            <label for="resetPortalType" class="form-label">Portal Type</label>
+                            <select class="form-select" id="resetPortalType" required>
+                                <option value="">Select Portal</option>
+                                <option value="student">Student Portal</option>
+                                <option value="parent">Parent Portal</option>
+                                <option value="teacher">Teacher Portal</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="resetStudentId" style="display: none;">
+                            <label for="resetStudentIdInput" class="form-label">Student ID</label>
+                            <input type="text" class="form-control" id="resetStudentIdInput" placeholder="Enter your Student ID">
+                        </div>
+                        <div class="mb-3" id="resetEmail">
+                            <label for="resetEmailInput" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="resetEmailInput" placeholder="Enter your registered email" required>
+                        </div>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Password reset instructions will be sent to your registered email address.
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Reset Instructions</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Switcher (Fixed Position) -->
+    <div class="position-fixed top-0 end-0 m-3" style="z-index: 1000;">
+        <div class="lang-switcher">
+            <button type="button" class="btn btn-sm active" data-lang="en">ENG</button>
+            <button type="button" class="btn btn-sm" data-lang="ta">TAM</button>
+            <button type="button" class="btn btn-sm" data-lang="si">SIN</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/language.js"></script>
+
+    <!-- Login Page Specific JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const portalTabs = document.querySelectorAll('.portal-tab');
+            const loginForms = document.querySelectorAll('.login-form');
+            const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+            const resetPortalType = document.getElementById('resetPortalType');
+
+            // Portal tab switching
+            portalTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    
+                    // Update active tab
+                    portalTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding form
+                    loginForms.forEach(form => {
+                        if (form.getAttribute('data-form') === target) {
+                            form.classList.add('active');
+                        } else {
+                            form.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Form submissions
+            document.getElementById('studentForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                handleLogin('student', {
+                    studentId: document.getElementById('studentId').value,
+                    password: document.getElementById('studentPassword').value,
+                    remember: document.getElementById('rememberStudent').checked
+                });
+            });
+
+            document.getElementById('parentForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                handleLogin('parent', {
+                    email: document.getElementById('parentEmail').value,
+                    password: document.getElementById('parentPassword').value,
+                    remember: document.getElementById('rememberParent').checked
+                });
+            });
+
+            document.getElementById('teacherForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                handleLogin('teacher', {
+                    teacherId: document.getElementById('teacherId').value,
+                    password: document.getElementById('teacherPassword').value,
+                    remember: document.getElementById('rememberTeacher').checked
+                });
+            });
+
+            // Forgot password form
+            resetPortalType.addEventListener('change', function() {
+                const studentIdField = document.getElementById('resetStudentId');
+                if (this.value === 'student') {
+                    studentIdField.style.display = 'block';
+                    document.getElementById('resetStudentIdInput').required = true;
+                } else {
+                    studentIdField.style.display = 'none';
+                    document.getElementById('resetStudentIdInput').required = false;
+                }
+            });
+
+            forgotPasswordForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = {
+                    portalType: resetPortalType.value,
+                    email: document.getElementById('resetEmailInput').value,
+                    studentId: document.getElementById('resetStudentIdInput').value
+                };
+
+                // Simulate password reset
+                showAlert('Password reset instructions have been sent to your email address.', 'success');
+                
+                // Close modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('forgotPasswordModal'));
+                modal.hide();
+                
+                // Reset form
+                this.reset();
+                document.getElementById('resetStudentId').style.display = 'none';
+                
+                console.log('Password reset requested:', formData);
+            });
+
+            // Demo credentials info
+            setTimeout(() => {
+                showDemoInfo();
+            }, 2000);
+        });
+
+        // Handle login attempts
+        function handleLogin(portalType, credentials) {
+            // Show loading state
+            const activeForm = document.querySelector('.login-form.active');
+            const submitBtn = activeForm.querySelector('.login-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Signing In...';
+            submitBtn.disabled = true;
+
+            // Simulate authentication
+            setTimeout(() => {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Demo successful login
+                showAlert(`Welcome to ${portalType} portal! This is a demo version.`, 'success');
+                
+                // In a real application, you would redirect to the appropriate dashboard
+                console.log(`${portalType} login attempt:`, credentials);
+                
+                // Simulate redirect after 2 seconds
+                setTimeout(() => {
+                    showAlert('Redirecting to dashboard...', 'info');
+                }, 2000);
+                
+            }, 1500);
+        }
+
+        // Show demo information
+        function showDemoInfo() {
+            const demoAlert = document.createElement('div');
+            demoAlert.className = 'alert alert-info alert-dismissible fade show position-fixed';
+            demoAlert.style.cssText = 'top: 80px; right: 20px; z-index: 9999; max-width: 350px;';
+            demoAlert.innerHTML = `
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>Demo Portal</strong><br>
+                This is a demonstration of the login interface. 
+                You can test with any credentials - all logins will show a success message.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(demoAlert);
+            
+            // Auto remove after 10 seconds
+            setTimeout(() => {
+                if (demoAlert && demoAlert.parentNode) {
+                    demoAlert.remove();
+                }
+            }, 10000);
+        }
+
+        // Show alert function
+        function showAlert(message, type = 'info') {
+            const existingAlert = document.querySelector('.login-alert');
+            if (existingAlert) {
+                existingAlert.remove();
+            }
+            
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type} alert-dismissible fade show position-fixed login-alert`;
+            alert.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+            alert.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(alert);
+            
+            setTimeout(() => {
+                if (alert && alert.parentNode) {
+                    alert.remove();
+                }
+            }, 5000);
+        }
+
+        // Initialize language system for login page
+        if (typeof initializeLanguageSystem === 'function') {
+            initializeLanguageSystem();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="navProjects">Projects - Kandenuwara Tamil Maha Vidyalayam</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Include -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="section-title" data-lang-key="navProjects">Ongoing Projects</h1>
+                        <p class="section-subtitle">Continuous improvement and development initiatives to enhance our educational environment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Categories -->
+        <section class="section bg-white">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <button class="btn btn-outline-primary active" data-filter="all">All Projects</button>
+                            <button class="btn btn-outline-primary" data-filter="infrastructure">Infrastructure</button>
+                            <button class="btn btn-outline-primary" data-filter="technology">Technology</button>
+                            <button class="btn btn-outline-primary" data-filter="academic">Academic</button>
+                            <button class="btn btn-outline-primary" data-filter="community">Community</button>
+                            <button class="btn btn-outline-primary" data-filter="environmental">Environmental</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Major Projects -->
+        <section class="section bg-white pt-0">
+            <div class="container">
+                <h2 class="section-title">Major Development Projects</h2>
+                
+                <!-- Featured Project -->
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="custom-card overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 class="card-img-top" alt="New Building Construction" style="height: 300px; object-fit: cover;">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-primary fs-6">Infrastructure</span>
+                                    <span class="badge bg-success fs-6">85% Complete</span>
+                                </div>
+                                <h3 class="card-title text-primary">New Academic Building Construction</h3>
+                                <p class="card-text lead mb-4">
+                                    Construction of a modern three-story academic building featuring 12 new classrooms, 
+                                    advanced science laboratories, computer lab, and multipurpose hall.
+                                </p>
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-3 col-6">
+                                        <div class="text-center">
+                                            <h5 class="text-primary mb-1">LKR 25M</h5>
+                                            <small class="text-muted">Total Budget</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="text-center">
+                                            <h5 class="text-primary mb-1">18 Months</h5>
+                                            <small class="text-muted">Duration</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="text-center">
+                                            <h5 class="text-primary mb-1">Dec 2025</h5>
+                                            <small class="text-muted">Completion</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="text-center">
+                                            <h5 class="text-primary mb-1">300+</h5>
+                                            <small class="text-muted">Beneficiaries</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress mb-3" style="height: 10px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infrastructure Projects -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h3 class="mb-4">Infrastructure Development</h3>
+                <div class="row g-4" id="projectsGrid">
+                    
+                    <!-- Library Expansion -->
+                    <div class="col-lg-6 project-item" data-category="infrastructure">
+                        <div class="custom-card h-100">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                         class="img-fluid h-100 w-100" alt="Library Expansion" style="object-fit: cover;">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="badge bg-info">Infrastructure</span>
+                                            <span class="badge bg-warning text-dark">60% Complete</span>
+                                        </div>
+                                        <h5 class="card-title">Library Expansion Project</h5>
+                                        <p class="card-text">Expanding library space with digital resources section, study areas, and reading rooms.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="fas fa-calendar me-1"></i>Completion: Aug 2025
+                                            </small>
+                                            <small class="text-success">
+                                                <i class="fas fa-money-bill-wave me-1"></i>LKR 3.5M
+                                            </small>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Playground Development -->
+                    <div class="col-lg-6 project-item" data-category="infrastructure">
+                        <div class="custom-card h-100">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                         class="img-fluid h-100 w-100" alt="Playground" style="object-fit: cover;">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="badge bg-info">Infrastructure</span>
+                                            <span class="badge bg-danger">25% Complete</span>
+                                        </div>
+                                        <h5 class="card-title">Sports Ground Enhancement</h5>
+                                        <p class="card-text">Upgrading playground with proper drainage, basketball court, and equipment storage.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="fas fa-calendar me-1"></i>Completion: Oct 2025
+                                            </small>
+                                            <small class="text-success">
+                                                <i class="fas fa-money-bill-wave me-1"></i>LKR 2.8M
+                                            </small>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 25%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technology Projects -->
+                    <div class="col-lg-6 project-item" data-category="technology">
+                        <div class="custom-card h-100">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                         class="img-fluid h-100 w-100" alt="Technology" style="object-fit: cover;">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="badge bg-primary">Technology</span>
+                                            <span class="badge bg-success">95% Complete</span>
+                                        </div>
+                                        <h5 class="card-title">Smart Classroom Integration</h5>
+                                        <p class="card-text">Installing smart boards, projectors, and interactive learning systems in all classrooms.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="fas fa-calendar me-1"></i>Completion: June 2025
+                                            </small>
+                                            <small class="text-success">
+                                                <i class="fas fa-money-bill-wave me-1"></i>LKR 4.2M
+                                            </small>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Projects -->
+                    <div class="col-lg-6 project-item" data-category="academic">
+                        <div class="custom-card h-100">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                         class="img-fluid h-100 w-100" alt="Laboratory" style="object-fit: cover;">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="badge bg-success">Academic</span>
+                                            <span class="badge bg-warning text-dark">70% Complete</span>
+                                        </div>
+                                        <h5 class="card-title">Science Laboratory Upgrade</h5>
+                                        <p class="card-text">Modernizing Physics, Chemistry, and Biology labs with latest equipment and safety measures.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="fas fa-calendar me-1"></i>Completion: Sep 2025
+                                            </small>
+                                            <small class="text-success">
+                                                <i class="fas fa-money-bill-wave me-1"></i>LKR 6.5M
+                                            </small>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 70%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Environmental Projects -->
+                    <div class="col-lg-6 project-item" data-category="environmental">
+                        <div class="custom-card h-100">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                         class="img-fluid h-100 w-100" alt="Green Initiative" style="object-fit: cover;">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="badge bg-success">Environmental</span>
+                                            <span class="badge bg-info">40% Complete</span>
+                                        </div>
+                                        <h5 class="card-title">Green Campus Initiative</h5>
+                                        <p class="card-text">Creating organic garden, rainwater harvesting, and solar panel installation project.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="fas fa-calendar me-1"></i>Completion: Nov 2025
+                                            </small>
+                                            <small class="text-success">
+                                                <i class="fas fa-money-bill-wave me-1"></i>LKR 1.8M
+                                            </small>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 40%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Community Projects -->
+                    <div class="col-lg-6 project-item" data-category="community">
+                        <div class="custom-card h-100">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                         class="img-fluid h-100 w-100" alt="Community Center" style="object-fit: cover;">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="badge bg-warning text-dark">Community</span>
+                                            <span class="badge bg-danger">15% Complete</span>
+                                        </div>
+                                        <h5 class="card-title">Community Learning Center</h5>
+                                        <p class="card-text">Building a center for adult education, skill development, and community meetings.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">
+                                                <i class="fas fa-calendar me-1"></i>Completion: Dec 2025
+                                            </small>
+                                            <small class="text-success">
+                                                <i class="fas fa-money-bill-wave me-1"></i>LKR 5.2M
+                                            </small>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 15%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Timeline -->
+        <section class="section bg-white">
+            <div class="container">
+                <h2 class="section-title">Project Timeline</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="timeline-container">
+                            <div class="timeline-item">
+                                <div class="timeline-date">
+                                    <span class="badge bg-primary">Q2 2025</span>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Smart Classroom Project Completion</h5>
+                                    <p>All classrooms will be equipped with smart boards and interactive learning technology.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">
+                                    <span class="badge bg-info">Q3 2025</span>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Library Expansion & Science Lab Upgrades</h5>
+                                    <p>Enhanced library facilities and modernized science laboratories for better learning experience.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">
+                                    <span class="badge bg-success">Q4 2025</span>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Infrastructure Projects Completion</h5>
+                                    <p>New academic building, sports ground enhancement, and community learning center completion.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funding & Support -->
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title">Project Funding & Support</h2>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="custom-card text-center p-4 h-100">
+                            <div class="mb-3">
+                                <i class="fas fa-university fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="mb-3">Government Support</h5>
+                            <p class="mb-3">Ministry of Education funding for infrastructure and technology upgrades.</p>
+                            <h4 class="text-primary">LKR 15M</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="custom-card text-center p-4 h-100">
+                            <div class="mb-3">
+                                <i class="fas fa-hands-helping fa-3x text-success"></i>
+                            </div>
+                            <h5 class="mb-3">Community Donations</h5>
+                            <p class="mb-3">Generous contributions from alumni, parents, and local community members.</p>
+                            <h4 class="text-success">LKR 8M</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="custom-card text-center p-4 h-100">
+                            <div class="mb-3">
+                                <i class="fas fa-globe fa-3x text-info"></i>
+                            </div>
+                            <h5 class="mb-3">International Aid</h5>
+                            <p class="mb-3">Support from international organizations and NGOs for educational development.</p>
+                            <h4 class="text-info">LKR 5M</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Support -->
+        <section class="section bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="section-title text-start">Support Our Projects</h2>
+                        <p class="lead mb-4">
+                            Your contribution can make a significant difference in providing quality education 
+                            and modern facilities for our students.
+                        </p>
+                        <div class="row g-3 mb-4">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <span>Direct Financial Support</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <span>Equipment Donations</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <span>Volunteer Support</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <span>Professional Services</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="contact.html" class="btn btn-primary">Get Involved</a>
+                            <a href="#" class="btn btn-outline-primary">Donation Information</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="custom-card p-4">
+                            <h4 class="mb-4 text-primary">Project Support Form</h4>
+                            <form id="supportForm">
+                                <div class="mb-3">
+                                    <label for="supportType" class="form-label">How would you like to support?</label>
+                                    <select class="form-select" id="supportType" required>
+                                        <option value="">Select support type</option>
+                                        <option value="financial">Financial Donation</option>
+                                        <option value="equipment">Equipment Donation</option>
+                                        <option value="volunteer">Volunteer Work</option>
+                                        <option value="professional">Professional Services</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="projectInterest" class="form-label">Project of Interest</label>
+                                    <select class="form-select" id="projectInterest">
+                                        <option value="">Select a project</option>
+                                        <option value="building">New Academic Building</option>
+                                        <option value="library">Library Expansion</option>
+                                        <option value="technology">Smart Classrooms</option>
+                                        <option value="laboratory">Science Lab Upgrade</option>
+                                        <option value="sports">Sports Ground</option>
+                                        <option value="environment">Green Campus</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="supportName" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="supportName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="supportEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="supportEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="supportMessage" class="form-label">Message</label>
+                                    <textarea class="form-control" id="supportMessage" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Submit Support Request</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Projects Page Specific JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const projectItems = document.querySelectorAll('.project-item');
+            const supportForm = document.getElementById('supportForm');
+
+            // Project filtering functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter project items
+                    projectItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            item.style.display = 'block';
+                            item.style.opacity = '1';
+                        } else {
+                            item.style.display = 'none';
+                            item.style.opacity = '0';
+                        }
+                    });
+                });
+            });
+
+            // Support form handling
+            if (supportForm) {
+                supportForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(this);
+                    const data = {
+                        supportType: formData.get('supportType') || document.getElementById('supportType').value,
+                        projectInterest: formData.get('projectInterest') || document.getElementById('projectInterest').value,
+                        name: formData.get('supportName') || document.getElementById('supportName').value,
+                        email: formData.get('supportEmail') || document.getElementById('supportEmail').value,
+                        message: formData.get('supportMessage') || document.getElementById('supportMessage').value
+                    };
+
+                    // Basic validation
+                    if (!data.supportType || !data.name || !data.email) {
+                        showAlert('Please fill in all required fields.', 'warning');
+                        return;
+                    }
+
+                    // Simulate form submission
+                    showAlert('Thank you for your interest in supporting our projects! We will contact you soon.', 'success');
+                    this.reset();
+                    
+                    console.log('Support form submitted:', data);
+                });
+            }
+
+            // Add CSS for timeline
+            const timelineCSS = `
+                .timeline-container {
+                    position: relative;
+                    padding: 20px 0;
+                }
+                .timeline-container::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 2px;
+                    height: 100%;
+                    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+                }
+                .timeline-item {
+                    position: relative;
+                    margin: 30px 0;
+                    display: flex;
+                    align-items: center;
+                }
+                .timeline-item:nth-child(odd) {
+                    flex-direction: row;
+                }
+                .timeline-item:nth-child(even) {
+                    flex-direction: row-reverse;
+                }
+                .timeline-date {
+                    flex: 0 0 auto;
+                    margin: 0 20px;
+                    z-index: 2;
+                }
+                .timeline-content {
+                    flex: 1;
+                    padding: 20px;
+                    background: white;
+                    border-radius: 10px;
+                    box-shadow: var(--box-shadow);
+                    max-width: 400px;
+                }
+                .timeline-item:nth-child(odd) .timeline-content {
+                    margin-right: auto;
+                }
+                .timeline-item:nth-child(even) .timeline-content {
+                    margin-left: auto;
+                }
+                @media (max-width: 768px) {
+                    .timeline-container::before {
+                        left: 20px;
+                    }
+                    .timeline-item {
+                        flex-direction: row !important;
+                    }
+                    .timeline-date {
+                        margin: 0 10px 0 0;
+                    }
+                    .timeline-content {
+                        max-width: none;
+                        margin: 0 !important;
+                    }
+                }
+            `;
+            
+            const style = document.createElement('style');
+            style.textContent = timelineCSS;
+            document.head.appendChild(style);
+        });
+
+        // Load header and footer
+        async function loadIncludes() {
+            try {
+                // Load header
+                const headerResponse = await fetch('includes/header.html');
+                const headerHTML = await headerResponse.text();
+                document.getElementById('header-container').innerHTML = headerHTML;
+                
+                // Load footer
+                const footerResponse = await fetch('includes/footer.html');
+                const footerHTML = await footerResponse.text();
+                document.getElementById('footer-container').innerHTML = footerHTML;
+                
+                // Reinitialize language system after loading includes
+                setTimeout(() => {
+                    if (typeof initializeLanguageSystem === 'function') {
+                        initializeLanguageSystem();
+                    }
+                }, 100);
+                
+            } catch (error) {
+                console.error('Error loading includes:', error);
+            }
+        }
+        
+        // Load includes when DOM is loaded
+        document.addEventListener('DOMContentLoaded', loadIncludes);
+    </script>
+</body>
+</html>
